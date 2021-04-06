@@ -1,0 +1,26 @@
+{
+  "name": "gstats",
+  "version": "0.1.0",
+  "description": "Show DrawCalls, FPS, Texture Count on PIXI, Phaser projects",
+  "module": "dist/main.js",
+  "scripts": {
+    "watch": "tsc -w -p .",
+    "build": "tsc -p .",
+    "show": "http-server ./ -p 8080 -o /exampless "
+  },
+  "keywords": [
+    "PIXI",
+    "PHASER",
+    "Stats",
+    "DC",
+    "FPS"
+  ],
+  "author": "eXponenta",
+  "license": "ISC",
+  "peerDependencies": {
+    "pixi.js": "*"
+  },
+  "devDependencies": {
+    "typescript": "^4.2.3"
+  }
+}
