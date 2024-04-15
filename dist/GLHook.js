@@ -1,4 +1,6 @@
-export default class GLHook {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+class GLHook {
     constructor(_gl) {
         this.drawPasses = 0;
         this.isInit = false;
@@ -32,4 +34,5 @@ export default class GLHook {
         this.isInit = false;
     }
 }
+exports.default = GLHook;
 //# sourceMappingURL=GLHook.js.map

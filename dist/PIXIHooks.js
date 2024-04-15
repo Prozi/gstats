@@ -1,14 +1,19 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
 // @ts-ignore (it's a peer dependency)
-import { Renderer } from 'pixi.js';
-import BaseHooks from './BaseHooks';
-export default class PIXIHooks extends BaseHooks {
+const pixi_js_1 = require("pixi.js");
+const BaseHooks_1 = __importDefault(require("./BaseHooks"));
+class PIXIHooks extends BaseHooks_1.default {
     constructor(app) {
         super();
         if (!app) {
             console.error("PIXI Application can't passed or NULL");
             return;
         }
-        if (app.renderer instanceof Renderer) {
+        if (app.renderer instanceof pixi_js_1.Renderer) {
             this.attach(app.renderer.gl);
             var start_textures = app.renderer.texture._managedTextures;
             if (start_textures && this.texturehook) {
@@ -29,4 +34,5 @@ export default class PIXIHooks extends BaseHooks {
         }
     }
 }
+exports.default = PIXIHooks;
 //# sourceMappingURL=PIXIHooks.js.map

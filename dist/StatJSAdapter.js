@@ -1,4 +1,6 @@
-export default class StatsJSAdapter {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+class StatsJSAdapter {
     constructor(_hook, _stats) {
         this.hook = _hook;
         if (_stats) {
@@ -33,4 +35,5 @@ export default class StatsJSAdapter {
             this.hook.reset();
     }
 }
+exports.default = StatsJSAdapter;
 //# sourceMappingURL=StatJSAdapter.js.map

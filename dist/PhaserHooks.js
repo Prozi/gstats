@@ -1,7 +1,12 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
 // @ts-ignore (it's a peer dependency)
-import { Renderer } from 'pixi.js';
-import BaseHooks from './BaseHooks';
-export default class PhaserHooks extends BaseHooks {
+const pixi_js_1 = require("pixi.js");
+const BaseHooks_1 = __importDefault(require("./BaseHooks"));
+class PhaserHooks extends BaseHooks_1.default {
     constructor(game) {
         super();
         if (!game) {
@@ -20,7 +25,7 @@ export default class PhaserHooks extends BaseHooks {
                 }
             }
             else {
-                if (game.renderer instanceof Renderer) {
+                if (game.renderer instanceof pixi_js_1.Renderer) {
                     this.attach(game.renderer.gl);
                 }
                 else {
@@ -33,4 +38,5 @@ export default class PhaserHooks extends BaseHooks {
         }
     }
 }
+exports.default = PhaserHooks;
 //# sourceMappingURL=PhaserHooks.js.map

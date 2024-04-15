@@ -1,13 +1,18 @@
-import GLHook from './GLHook';
-import TextureHook from './TextureHook';
-export default class BaseHooks {
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const GLHook_1 = __importDefault(require("./GLHook"));
+const TextureHook_1 = __importDefault(require("./TextureHook"));
+class BaseHooks {
     constructor() {
         this._drawCalls = -1;
         this._maxDeltaDrawCalls = -1;
     }
     attach(gl) {
-        this.glhook = new GLHook(gl);
-        this.texturehook = new TextureHook(gl);
+        this.glhook = new GLHook_1.default(gl);
+        this.texturehook = new TextureHook_1.default(gl);
     }
     get drawCalls() {
         if (this.glhook && this.glhook.isInit) {
@@ -54,4 +59,5 @@ export default class BaseHooks {
             this.texturehook.release();
     }
 }
+exports.default = BaseHooks;
 //# sourceMappingURL=BaseHooks.js.map

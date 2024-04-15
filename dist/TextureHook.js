@@ -1,4 +1,6 @@
-export default class TextureHook {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+class TextureHook {
     constructor(_gl) {
         this.createdTextures = new Array();
         this.maxTexturesCount = 0;
@@ -53,4 +55,5 @@ export default class TextureHook {
         this.isInit = false;
     }
 }
+exports.default = TextureHook;
 //# sourceMappingURL=TextureHook.js.map
