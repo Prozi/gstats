@@ -9,7 +9,7 @@ class StatsJSAdapter {
         else {
             this.stats = null;
             if (window.Stats) {
-                this.stats = new (window.Stats)();
+                this.stats = new window.Stats();
             }
         }
         if (this.stats) {

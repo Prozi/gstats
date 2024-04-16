@@ -1,4 +1,4 @@
-import BaseHooks from './BaseHooks';
+import BaseHooks from "./BaseHooks";
 export default class StatsJSAdapter {
     stats: any;
     dcPanel?: any;

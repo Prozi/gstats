@@ -1,12 +1,12 @@
 {
   "name": "@jacekpietal/gstats",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Show DrawCalls, FPS, Texture Count on PIXI, Phaser projects",
   "module": "dist/main.js",
   "scripts": {
     "watch": "tsc -w -p .",
-    "build": "tsc -p .",
-    "show": "http-server ./ -p 8080 -o /exampless "
+    "prebuild": "prettier --write src",
+    "build": "tsc -p ."
   },
   "keywords": [
     "PIXI",
@@ -21,6 +21,7 @@
     "pixi.js": "*"
   },
   "devDependencies": {
+    "prettier": "^3.2.5",
     "typescript": "^4.2.3"
   }
 }

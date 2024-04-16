@@ -17,7 +17,8 @@ class PhaserHooks extends BaseHooks_1.default {
         if (_w.Phaser) {
             var version = _w.Phaser.VERSION;
             if (version.startsWith("3")) {
-                if (game.renderer.gl && game.renderer.gl instanceof WebGLRenderingContext) {
+                if (game.renderer.gl &&
+                    game.renderer.gl instanceof WebGLRenderingContext) {
                     this.attach(game.renderer.gl);
                 }
                 else {
