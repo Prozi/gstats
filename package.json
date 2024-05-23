@@ -1,5 +1,5 @@
 {
-  "name": "@pietall.dev/gstats",
+  "name": "@pietal.dev/gstats",
   "version": "0.1.3",
   "description": "Show DrawCalls, FPS, Texture Count on PIXI, Phaser projects",
   "main": "dist/index.js",
