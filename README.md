@@ -5,21 +5,24 @@ This is a fork of [eXponenta's gstatsjs](https://github.com/eXponenta/gstatsjs) 
 It also drops support of Pixi v4 in favor of v5.
 
 ```sh
-npm install gstats # for npm users
-yarn add gstats # alternatively, for yarn users
+# for npm users
+npm install @pietal.dev/gstats --save
+# alternatively, for yarn users
+yarn add @pietal.dev/gstats --save
 ```
 
 Graphics statistics (Texture count, DrawPasses) for WebGL applications. Capability with [stats.js](https://github.com/mrdoob/stats.js)
 
 # Remarks
 
-~~Due to [bug of cacheAsBitmap on Graphics on PIXIv4](https://github.com/pixijs/pixi.js/issues/4692),  TextureCounter incorrectly gets the number of textures.~~
+~~Due to [bug of cacheAsBitmap on Graphics on PIXIv4](https://github.com/pixijs/pixi.js/issues/4692), TextureCounter incorrectly gets the number of textures.~~
 
-Currently Draw Calls counter can't work on Phaser 3, because Phaser 3 use DrawArrays for rendering WebGL instead DrawElements. 
+Currently Draw Calls counter can't work on Phaser 3, because Phaser 3 use DrawArrays for rendering WebGL instead DrawElements.
 Textures amount for Phaser 2 and 3 is relative value, and may be negative.
 
 # Examples
-[PIXI Stats.js example](./exampless/pixi) - show PIXI game Draw Calls and Textures Count statistics by [Stas.js](https://github.com/mrdoob/stats.js/). 
+
+[PIXI Stats.js example](./exampless/pixi) - show PIXI game Draw Calls and Textures Count statistics by [Stas.js](https://github.com/mrdoob/stats.js/).
 
 [Phaser 2 CE Stats.js example](./exampless/phaser2ce) - show Phaser 2 CE game Draw Calls and Textures Count statistics by [Stas.js](https://github.com/mrdoob/stats.js/).
 
@@ -27,16 +30,17 @@ Textures amount for Phaser is relative value, and may be negative.
 
 [Phaser 3 Stats.js example](./exampless/phaser3) - show Phaser 3 Textures Count statistics by [Stas.js](https://github.com/mrdoob/stats.js/).
 
-How i can destroy sprite in Phaser 3 with its texture ? 
+How i can destroy sprite in Phaser 3 with its texture ?
 
-Currently DC can't work, because Phaser 3 use DrawArrays for rendering WebGL. 
+Currently DC can't work, because Phaser 3 use DrawArrays for rendering WebGL.
 Textures amount for Phaser3 is relative value, and may be negative.
 
 # Using
+
 ### PIXI & Stats.js
 
 ```javascript
-var app = new PIXI.Application (options);
+var app = new PIXI.Application(options);
 var pixiHooks = new GStats.PIXIHooks(app);
 var stats = new GStats.StatsJSAdapter(pixiHooks);
 document.body.appendChild(stats.stats.dom || stats.stats.domElement);
@@ -44,6 +48,7 @@ app.ticker.add(stats.update);
 ```
 
 ### Phaser 2/3 & Stats.js
+
 ```javascript
 var game = new Phaser.Game(options);
 var phaserHooks = new GStats.PhaserHooks(game);
@@ -52,13 +57,16 @@ document.body.appendChild(stats.stats.dom || stats.stats.domElement);
 
 //or other update function
 function update() {
-    stats.update();
+  stats.update();
 }
 ```
 
 ### PIXI/Phaser & Show stats in app context
+
 coming soon...
-### Raw WebGL & Stats.js 
+
+### Raw WebGL & Stats.js
+
 ```javascript
 var gl = // WebGL2RenderingContext;
 var baseHooks = new GStats.BaseHooks();
@@ -75,4 +83,4 @@ function update() {
 
 ### TypeScript
 
-Go to  [gstats.d.ts](https://github.com/eXponenta/gstatsjs/blob/master/dist/gstats.d.ts)
+Go to [index.d.ts](https://github.com/Prozi/gstats/blob/master/dist/index.d.ts)

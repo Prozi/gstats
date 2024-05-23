@@ -1,12 +1,11 @@
-
 var config = {
-    type: Phaser.WEBGL,
-    width: 800,
-    height: 600,
-    scene: {
-        create: create,
-        update: update
-    }
+  type: Phaser.WEBGL,
+  width: 800,
+  height: 600,
+  scene: {
+    create: create,
+    update: update,
+  },
 };
 
 var game = new Phaser.Game(config);
@@ -18,44 +17,43 @@ var st = null;
 var GLOBALTHIS = null;
 var gindex = 0;
 
-function create(){
-  
+function create() {
   GLOBALTHIS = this;
 
   var _this = this;
-  var spavn = function(){
-     
+  var spavn = function () {
+    var rect = new Phaser.Geom.Rectangle(0, 0, 100, 100);
 
-     var rect = new Phaser.Geom.Rectangle(0, 0, 100, 100);
+    var g = _this.add.graphics({
+      fillStyle: { color: 0xff3300 * Math.random() },
+      lineStyle: {
+        width: 2,
+        color: 0xffffff * Math.random(),
+      },
+    });
 
-     var g = _this.add.graphics(
-     {
-        fillStyle : {color: 0xFF3300 * Math.random()},
-        lineStyle: {
-          width: 2,
-          color: 0xFFFFFF * Math.random()}
-     });
+    g.fillRectShape(rect);
+    g.generateTexture("TEX_" + gindex, 100, 100);
 
-     g.fillRectShape(rect);
-     g.generateTexture("TEX_" + gindex, 100, 100);
-     
-     var s = _this.add.sprite(Math.random() * 700, Math.random() * 500, "TEX_" + gindex);
+    var s = _this.add.sprite(
+      Math.random() * 700,
+      Math.random() * 500,
+      "TEX_" + gindex,
+    );
 
-     gindex ++;
-     
-     g.destroy();
+    gindex++;
 
-     setTimeout(spavn , Math.random()*1000);
-     
-     setTimeout(function() {
-      
-      s.destroy(true,true);
+    g.destroy();
 
-     }, 3000);
-  }
-  setTimeout(spavn , Math.random()*1000)
+    setTimeout(spavn, Math.random() * 1000);
 
-  setTimeout(function(){
+    setTimeout(function () {
+      s.destroy(true, true);
+    }, 3000);
+  };
+  setTimeout(spavn, Math.random() * 1000);
+
+  setTimeout(function () {
     var pixi_gstats = new GStats.PhaserHooks(game);
     st = new GStats.StatsJSAdapter(pixi_gstats);
 
@@ -63,15 +61,13 @@ function create(){
   }, 1000);
 
   // let's create a moving shape
-  thing = this.add.graphics(400,300);
-
+  thing = this.add.graphics(400, 300);
 }
 
 function update() {
+  count += 0.1;
 
-    count += 0.1;
-
-/*
+  /*
     thing.clear();
     thing.lineStyle(10, 0xff0000, 1);
     thing.beginFill(0xffFF00, 0.5);
@@ -84,7 +80,7 @@ function update() {
 
     thing.rotation = count * 0.1;
 */
-    if(st){
-      st.update();
-    }
+  if (st) {
+    st.update();
+  }
 }

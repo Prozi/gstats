@@ -1,12 +1,18 @@
 {
-  "name": "@jacekpietal/gstats",
+  "name": "@pietall.dev/gstats",
   "version": "0.1.2",
   "description": "Show DrawCalls, FPS, Texture Count on PIXI, Phaser projects",
-  "module": "dist/main.js",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "repository": "git://github.com/Prozi/gstats.git",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "watch": "tsc -w -p .",
     "prebuild": "prettier --write src",
-    "build": "tsc -p ."
+    "build": "tsc -p .",
+    "precommit": "prettier --write .; yarn build"
   },
   "keywords": [
     "PIXI",
@@ -16,6 +22,9 @@
     "FPS"
   ],
   "author": "eXponenta",
+  "maintainers": [
+    "Prozi <github.com/Prozi>"
+  ],
   "license": "ISC",
   "peerDependencies": {
     "pixi.js": "*"
