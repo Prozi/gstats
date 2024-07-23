@@ -1,6 +1,6 @@
 {
   "name": "@pietal.dev/gstats",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Show DrawCalls, FPS, Texture Count on PIXI, Phaser projects",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -12,8 +12,7 @@
     "watch": "tsc -w -p .",
     "prebuild": "prettier --write src",
     "build": "tsc -p .",
-    "precommit": "prettier --write .; yarn build",
-    "downgrade": "yarn add typescript@^4 -D"
+    "precommit": "prettier --write .; yarn build"
   },
   "keywords": [
     "PIXI",
@@ -31,7 +30,7 @@
     "pixi.js": "*"
   },
   "devDependencies": {
-    "prettier": "^3.2.5",
-    "typescript": "^4"
+    "prettier": "^3.3.3",
+    "typescript": "^5"
   }
 }
