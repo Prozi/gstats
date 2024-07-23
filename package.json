@@ -1,12 +1,13 @@
 {
   "name": "@pietal.dev/gstats",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Show DrawCalls, FPS, Texture Count on PIXI, Phaser projects",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "repository": "git://github.com/Prozi/gstats.git",
   "files": [
-    "dist"
+    "dist/",
+    "src/"
   ],
   "scripts": {
     "watch": "tsc -w -p .",
